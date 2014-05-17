@@ -7,7 +7,11 @@ import android.view.MenuItem;
 
 import com.govdevchallenge.team11.challenge2.R;
 import com.govdevchallenge.team11.challenge2.events.DrawerNavigationEvent;
+import com.govdevchallenge.team11.challenge2.fragments.DeliveryPickupFragment;
+import com.govdevchallenge.team11.challenge2.fragments.DonationMapFragment;
+import com.govdevchallenge.team11.challenge2.fragments.IntakeFormFragment;
 import com.govdevchallenge.team11.challenge2.fragments.NavigationDrawerFragment;
+import com.govdevchallenge.team11.challenge2.fragments.WalkInPickupFragment;
 import com.govdevchallenge.team11.challenge2.utils.NavigationBus;
 import com.squareup.otto.Subscribe;
 
@@ -36,7 +40,33 @@ public class MainActivity extends Activity {
 
 	@Subscribe
 	public void onDrawerNavigationEvent( DrawerNavigationEvent event ) {
-		//swap fragments
+		if( event.section == null )
+			return;
+
+		if( event.section == getString( R.string.navigation_donation_map ) ) {
+			getFragmentManager()
+					.beginTransaction()
+					.replace(R.id.drawer_container, DonationMapFragment.getInstance())
+					.commit();
+		}
+		if( event.section == getString( R.string.navigation_intake_title ) ) {
+			getFragmentManager()
+					.beginTransaction()
+					.replace(R.id.drawer_container, IntakeFormFragment.getInstance())
+					.commit();
+		}
+		if( event.section == getString( R.string.navigation_pickup ) ) {
+			getFragmentManager()
+					.beginTransaction()
+					.replace(R.id.drawer_container, DeliveryPickupFragment.getInstance())
+					.commit();
+		}
+		if( event.section == getString( R.string.navigation_walk_in ) ) {
+			getFragmentManager()
+					.beginTransaction()
+					.replace(R.id.drawer_container, WalkInPickupFragment.getInstance())
+					.commit();
+		}
 	}
 
 	@Override
