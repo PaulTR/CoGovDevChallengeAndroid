@@ -158,6 +158,14 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 	}
 
 	@Override
+	public void onStop() {
+		super.onStop();
+		if( mLocationClient != null )
+			mLocationClient.disconnect();
+		mGoogleMap = null;
+	}
+
+	@Override
 	public void onPause() {
 		super.onPause();
 		NavigationBus.getInstance().unregister( this );
@@ -174,9 +182,6 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		if( mLocationClient != null )
-			mLocationClient.disconnect();
-		mGoogleMap = null;
 	}
 
 	@Override
@@ -186,8 +191,9 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 	}
 
 	private void initMap() {
-		if( mGoogleMap == null )
-			return;
+		if( mGoogleMap == null ) {
+			mGoogleMap = mMapFragment.getMap();
+		}
 
 		mGoogleMap.setTrafficEnabled( false );
 		mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL );
@@ -225,6 +231,9 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 				.tilt( tilt )
 				.build();
 
+		if( cameraPosition == null || mGoogleMap == null )
+			return;
+
 		mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 	}
 
@@ -240,7 +249,8 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 
 	@Override
 	public void onDisconnected() {
-
+		mGoogleMap = null;
+		mMapFragment = null;
 	}
 
 	@Override
