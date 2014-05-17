@@ -2,6 +2,7 @@ package com.govdevchallenge.team11.challenge2.fragments;
 
 import android.app.ListFragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -37,6 +38,8 @@ public class NavigationDrawerFragment extends ListFragment {
 		super.onListItemClick(l, v, position, id);
 
 		String navigationItemTitle = l.getAdapter().getItem( position ).toString();
+		NavigationBus.getInstance().register( this );
 		NavigationBus.getInstance().post( new DrawerNavigationEvent( navigationItemTitle ) );
+		NavigationBus.getInstance().unregister( this );
 	}
 }

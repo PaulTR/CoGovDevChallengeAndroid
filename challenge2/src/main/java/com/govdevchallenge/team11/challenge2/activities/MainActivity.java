@@ -2,11 +2,13 @@ package com.govdevchallenge.team11.challenge2.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.govdevchallenge.team11.challenge2.R;
 import com.govdevchallenge.team11.challenge2.events.DrawerNavigationEvent;
+import com.govdevchallenge.team11.challenge2.fragments.AuthFragment;
 import com.govdevchallenge.team11.challenge2.fragments.DeliveryPickupFragment;
 import com.govdevchallenge.team11.challenge2.fragments.DonationMapFragment;
 import com.govdevchallenge.team11.challenge2.fragments.IntakeFormFragment;
@@ -35,7 +37,10 @@ public class MainActivity extends Activity {
 	}
 
 	private void initAuthenticationFragment() {
-		//Load authentication fragment into R.id.container
+		getFragmentManager()
+				.beginTransaction()
+				.add( R.id.content_container, AuthFragment.getInstance() )
+				.commit();
 	}
 
 	@Subscribe
@@ -43,28 +48,22 @@ public class MainActivity extends Activity {
 		if( event.section == null )
 			return;
 
-		if( event.section == getString( R.string.navigation_donation_map ) ) {
+		if( event.section.equalsIgnoreCase( getString( R.string.navigation_donation_map ) ) ){
 			getFragmentManager()
 					.beginTransaction()
-					.replace(R.id.drawer_container, DonationMapFragment.getInstance())
+					.replace(R.id.content_container, DonationMapFragment.getInstance())
 					.commit();
 		}
-		if( event.section == getString( R.string.navigation_intake_title ) ) {
+		if( event.section.equalsIgnoreCase( getString( R.string.navigation_intake ) ) ) {
 			getFragmentManager()
 					.beginTransaction()
-					.replace(R.id.drawer_container, IntakeFormFragment.getInstance())
+					.replace(R.id.content_container, IntakeFormFragment.getInstance())
 					.commit();
 		}
-		if( event.section == getString( R.string.navigation_pickup ) ) {
+		if( event.section.equalsIgnoreCase( getString( R.string.navigation_pickup ) ) ) {
 			getFragmentManager()
 					.beginTransaction()
-					.replace(R.id.drawer_container, DeliveryPickupFragment.getInstance())
-					.commit();
-		}
-		if( event.section == getString( R.string.navigation_walk_in ) ) {
-			getFragmentManager()
-					.beginTransaction()
-					.replace(R.id.drawer_container, WalkInPickupFragment.getInstance())
+					.replace(R.id.content_container, DeliveryPickupFragment.getInstance())
 					.commit();
 		}
 	}

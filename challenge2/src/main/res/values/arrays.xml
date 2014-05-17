@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="navigation_items">
-        <item name="navigation_intake">@string/navigation_intake_title</item>
+        <item name="navigation_intake">@string/navigation_intake</item>
         <item name="navigation_pickup">@string/navigation_pickup</item>
         <item name="navigation_walkins">@string/navigation_walk_in</item>
         <item name="navigation_donation_map">@string/navigation_donation_map</item>
