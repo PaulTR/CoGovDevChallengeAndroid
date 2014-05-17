@@ -1031,8 +1031,7 @@ containing a value of this type.
         public static final int fragment_delivery_pickup=0x7f03001a;
         public static final int fragment_donation_map=0x7f03001b;
         public static final int fragment_intake=0x7f03001c;
-        public static final int fragment_walk_in_pickup=0x7f03001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -1054,9 +1053,8 @@ containing a value of this type.
         public static final int action_settings=0x7f0b000d;
         public static final int app_name=0x7f0b000e;
         public static final int navigation_donation_map=0x7f0b000f;
-        public static final int navigation_intake_title=0x7f0b0010;
+        public static final int navigation_intake=0x7f0b0010;
         public static final int navigation_pickup=0x7f0b0011;
-        public static final int navigation_walk_in=0x7f0b0012;
     }
     public static final class style {
         /**  Customize your theme here. 

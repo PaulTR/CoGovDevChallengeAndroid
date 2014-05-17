@@ -3,7 +3,6 @@
     <string-array name="navigation_items">
         <item name="navigation_intake">@string/navigation_intake</item>
         <item name="navigation_pickup">@string/navigation_pickup</item>
-        <item name="navigation_walkins">@string/navigation_walk_in</item>
         <item name="navigation_donation_map">@string/navigation_donation_map</item>
     </string-array>
 </resources>

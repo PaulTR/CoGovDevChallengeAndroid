@@ -2,7 +2,6 @@ package com.govdevchallenge.team11.challenge2.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,10 +12,8 @@ import com.govdevchallenge.team11.challenge2.fragments.DeliveryPickupFragment;
 import com.govdevchallenge.team11.challenge2.fragments.DonationMapFragment;
 import com.govdevchallenge.team11.challenge2.fragments.IntakeFormFragment;
 import com.govdevchallenge.team11.challenge2.fragments.NavigationDrawerFragment;
-import com.govdevchallenge.team11.challenge2.fragments.WalkInPickupFragment;
 import com.govdevchallenge.team11.challenge2.utils.NavigationBus;
 import com.squareup.otto.Subscribe;
-
 
 public class MainActivity extends Activity {
 
