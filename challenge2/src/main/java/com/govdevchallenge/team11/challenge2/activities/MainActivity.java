@@ -43,10 +43,10 @@ public class MainActivity extends FragmentActivity {
 	private void displayInitialFragment() {
 		getFragmentManager()
 				.beginTransaction()
-				.replace(R.id.content_container, DonationMapFragment.getInstance())
+				.replace(R.id.content_container, IntakeFormFragment.getInstance())
 				.commit();
 
-		mCurFragmentName = getString( R.string.navigation_donation_map );
+		mCurFragmentName = getString( R.string.navigation_intake );
 	}
 
 	private void initActionBar() {

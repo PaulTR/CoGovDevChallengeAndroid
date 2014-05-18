@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <Button
+        android:id="@+id/verify_case_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify Case Number"
+        />
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    <Button
+        android:id="@+id/add_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Item"
+        android:layout_below="@+id/verify_case_num"
+        />
 
     <TextView
+        android:id="@+id/case_num"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/navigation_pickup" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_item"
+        android:gravity="center"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/case_num"
+        android:layout_above="@+id/submit"
+        android:divider="@null"
+        android:dividerHeight="8dp"
+        android:drawSelectorOnTop="true" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

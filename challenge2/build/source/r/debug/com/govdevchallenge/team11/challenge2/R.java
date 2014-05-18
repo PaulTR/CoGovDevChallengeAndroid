@@ -1298,18 +1298,19 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f080018;
         public static final int action_menu_presenter=0x7f080019;
         public static final int action_mode_close_button=0x7f080027;
-        public static final int action_settings=0x7f08005d;
+        public static final int action_settings=0x7f08005f;
         public static final int activity_chooser_view_content=0x7f080028;
-        public static final int add_buttons_container=0x7f080053;
-        public static final int add_donor=0x7f080054;
-        public static final int add_item=0x7f080055;
+        public static final int add_buttons_container=0x7f080058;
+        public static final int add_donor=0x7f080059;
+        public static final int add_item=0x7f080054;
         public static final int address_1=0x7f080045;
         public static final int address_2=0x7f080046;
         public static final int always=0x7f080012;
         public static final int beginning=0x7f08000a;
-        public static final int category_container=0x7f08005b;
+        public static final int case_num=0x7f080052;
+        public static final int category_container=0x7f08005d;
         public static final int category_spinner=0x7f08004f;
-        public static final int category_text=0x7f08005c;
+        public static final int category_text=0x7f08005e;
         public static final int checkbox=0x7f080030;
         public static final int city=0x7f080047;
         public static final int collapseActionView=0x7f080014;
@@ -1317,7 +1318,7 @@ containing a value of this type.
         public static final int default_activity_button=0x7f08002b;
         public static final int dialog=0x7f080015;
         public static final int disableHome=0x7f080008;
-        public static final int donor_name=0x7f080056;
+        public static final int donor_name=0x7f08005a;
         public static final int drawer_container=0x7f080042;
         public static final int drawer_layout=0x7f080040;
         public static final int dropdown=0x7f080016;
@@ -1335,12 +1336,12 @@ containing a value of this type.
         public static final int image=0x7f08002a;
         public static final int item_desc=0x7f080051;
         public static final int item_name=0x7f08004e;
-        public static final int item_qty=0x7f08005a;
+        public static final int item_qty=0x7f08005c;
         public static final int last_name=0x7f080044;
-        public static final int list=0x7f080057;
+        public static final int list=0x7f080055;
         public static final int listMode=0x7f080001;
         public static final int list_item=0x7f08002c;
-        public static final int map=0x7f080052;
+        public static final int map=0x7f080057;
         public static final int middle=0x7f08000b;
         public static final int never=0x7f080010;
         public static final int none=0x7f080009;
@@ -1368,7 +1369,7 @@ containing a value of this type.
         public static final int sign_in_button=0x7f08003f;
         public static final int split_action_bar=0x7f080021;
         public static final int state=0x7f080048;
-        public static final int submit=0x7f080058;
+        public static final int submit=0x7f080056;
         public static final int submit_area=0x7f08003c;
         public static final int tabMode=0x7f080002;
         public static final int terrain=0x7f08000e;
@@ -1376,9 +1377,10 @@ containing a value of this type.
         public static final int top_action_bar=0x7f080023;
         public static final int up=0x7f080024;
         public static final int upc_camera_button=0x7f08004c;
-        public static final int upc_number=0x7f080059;
+        public static final int upc_number=0x7f08005b;
         public static final int upc_text=0x7f08004d;
         public static final int useLogo=0x7f080003;
+        public static final int verify_case_num=0x7f080053;
         public static final int withText=0x7f080013;
         public static final int zip=0x7f080049;
     }
@@ -1415,12 +1417,13 @@ containing a value of this type.
         public static final int activity_main=0x7f030019;
         public static final int dialog_add_donor=0x7f03001a;
         public static final int dialog_add_item=0x7f03001b;
-        public static final int fragment_delivery_pickup=0x7f03001c;
-        public static final int fragment_donation_map=0x7f03001d;
-        public static final int fragment_intake=0x7f03001e;
-        public static final int rockiesrelief_tab_indicator_holo=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
-        public static final int view_donated_item=0x7f030021;
+        public static final int dialog_verify=0x7f03001c;
+        public static final int fragment_delivery_pickup=0x7f03001d;
+        public static final int fragment_donation_map=0x7f03001e;
+        public static final int fragment_intake=0x7f03001f;
+        public static final int rockiesrelief_tab_indicator_holo=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
+        public static final int view_donated_item=0x7f030022;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
