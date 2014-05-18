@@ -14,6 +14,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.location.LocationClient;
@@ -27,6 +31,9 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.govdevchallenge.team11.challenge2.R;
 import com.govdevchallenge.team11.challenge2.events.DonationMapSpinnerItemEvent;
+import com.govdevchallenge.team11.challenge2.models.Center;
+import com.govdevchallenge.team11.challenge2.models.CenterList;
+import com.govdevchallenge.team11.challenge2.utils.GsonRequest;
 import com.govdevchallenge.team11.challenge2.utils.NavigationBus;
 import com.squareup.otto.Subscribe;
 
@@ -101,11 +108,40 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 
 		mMarkerLocations.clear();
 		mGoogleMap.clear();
-		Random random = new Random();
-		addMarker( Integer.toString(Math.abs(random.nextInt(9999))), 40.10, -105.25, "Boulder Shelter", "Address" );
-		addMarker( Integer.toString( Math.abs( random.nextInt( 9999 ) ) ), 40, -105.10, "Longmont Shelter", "Address" );
-		addMarker( Integer.toString( Math.abs( random.nextInt( 9999 ) ) ), 39.75, -104.87, "Denver Shelter", "Address" );
+
+		String feedUrl = "http://162.222.181.217:3000/api/DonationCenters";
+		GsonRequest<CenterList> request = new GsonRequest<CenterList>( Request.Method.GET, feedUrl,
+				CenterList.class, successListener(), errorListener() );
+		Volley.newRequestQueue( getActivity()).add( request );
 	}
+
+	public Response.Listener successListener()
+	{
+		return new Response.Listener<CenterList>()
+		{
+			@Override
+			public void onResponse( CenterList centerList ) {
+				Random random = new Random();
+				if( centerList == null )
+					Log.e ("DonationMapFragment", "centerList null" );
+				for( Center center : centerList.getCenterList() ) {
+					addMarker(Integer.toString(Math.abs(random.nextInt(9999))), center.getDonationCenterGeoLat(), center.getDonationCenterGeoLong(), center.getDonationCenterLocation(), center.getDonationCenterAddress1());
+				}
+			}
+		};
+	}
+
+	protected Response.ErrorListener errorListener()
+	{
+		return new Response.ErrorListener()
+		{
+			@Override
+			public void onErrorResponse( VolleyError volleyError )
+			{
+			}
+		};
+	}
+
 
 	private void addMarker(String num, double lat, double lng, String title, String address) {
 		Bitmap.Config conf = Bitmap.Config.ARGB_8888;

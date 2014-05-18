@@ -99,6 +99,11 @@
     <color name="common_signin_btn_light_text_disabled">#FFAAAAAA</color>
     <color name="common_signin_btn_light_text_focused">#FF737373</color>
     <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
+    <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/values/colors_rockiesrelief.xml -->
+    <eat-comment />
+
+    <color name="list_selected_color">#88002868</color>
+    <color name="rockiesrelief_color">#002868</color>
     <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
     <eat-comment />
 
@@ -596,6 +601,13 @@
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
     <item name="dialog_fixed_width_major" type="dimen">320dp</item>
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
+    <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/values/dimens_rockiesrelief.xml -->
+    <eat-comment />
+
+    <dimen name="tab_host_default_height">48dp</dimen>
+    <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
+    <eat-comment />
+
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
@@ -705,9 +717,40 @@
         <item name="android:actionModeBackground">@drawable/cab_background_top_rockiesrelief</item>
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_rockiesrelief</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Rockiesrelief</item>
+        <item name="android:editTextBackground">@drawable/rockiesrelief_edit_text_holo_light</item>
+        <item name="android:textColorHighlight">#99002868</item>
+        <item name="android:textSelectHandleLeft">@drawable/rockiesrelief_text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/rockiesrelief_text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/rockiesrelief_text_select_handle_middle</item>
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewrockiesrelief</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/rockiesrelief_btn_check_holo_light</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/rockiesrelief_btn_radio_holo_light</item>
+        <item name="android:buttonStyle">@style/Buttonrockiesrelief</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonrockiesrelief</item>
+        <item name="android:dropDownSpinnerStyle">@style/Spinnerrockiesrelief</item>
+        <item name="android:progressBarStyleHorizontal">@style/ProgressBarrockiesrelief</item>
+        <item name="android:seekBarStyle">@style/SeekBarrockiesrelief</item>
+        <item name="android:ratingBarStyle">@style/RatingBarrockiesrelief</item>
+        <item name="android:ratingBarStyleIndicator">@style/RatingBarBigrockiesrelief</item>
+        <item name="android:ratingBarStyleSmall">@style/RatingBarSmallrockiesrelief</item>
+        <item name="android:buttonStyleToggle">@style/Togglerockiesrelief</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/rockiesrelief_list_selector_holo_light</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/rockiesrelief_activated_background_holo_light</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/rockiesrelief_fastscroll_thumb_holo</item>
 
         <!-- Light.DarkActionBar specific -->
         <item name="android:actionBarWidgetTheme">@style/Theme.Rockiesrelief.Widget</item>
+        <item name="android:listViewStyle">@style/Theme.Rockiesrelief.Listview</item>
+    </style>
+
+    <style name="AutoCompleteTextViewrockiesrelief" parent="android:Widget.Holo.Light.AutoCompleteTextView">
+        <item name="android:dropDownSelector">@drawable/rockiesrelief_list_selector_holo_light</item>
+        <item name="android:background">@drawable/rockiesrelief_edit_text_holo_light</item>
+    </style>
+
+    <style name="Buttonrockiesrelief" parent="android:Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/rockiesrelief_btn_default_holo_light</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="DropDownListView.Rockiesrelief" parent="@android:style/Widget.Holo.ListView.DropDown">
@@ -720,12 +763,67 @@
         <item name="android:dropDownSelector">@drawable/selectable_background_rockiesrelief</item>
     </style>
 
+    <style name="ImageButtonrockiesrelief" parent="android:Widget.Holo.Light.ImageButton">
+        <item name="android:background">@drawable/rockiesrelief_btn_default_holo_light</item>
+    </style>
+
     <style name="PopupMenu.Rockiesrelief" parent="@android:style/Widget.Holo.ListPopupWindow">
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_rockiesrelief</item>
     </style>
 
     <style name="ProgressBar.Rockiesrelief" parent="@android:style/Widget.Holo.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_horizontal_rockiesrelief</item>
+    </style>
+
+    <style name="ProgressBarrockiesrelief" parent="android:Widget.Holo.Light.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/rockiesrelief_progress_horizontal_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/rockiesrelief_progress_indeterminate_horizontal_holo_light</item>
+    </style>
+
+    <style name="RatingBarBigrockiesrelief" parent="android:Widget.Holo.Light.RatingBar.Indicator">
+        <item name="android:progressDrawable">@drawable/rockiesrelief_ratingbar_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/rockiesrelief_ratingbar_holo_light</item>
+    </style>
+
+    <style name="RatingBarSmallrockiesrelief" parent="android:Widget.Holo.Light.RatingBar.Small">
+        <item name="android:progressDrawable">@drawable/rockiesrelief_ratingbar_small_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/rockiesrelief_ratingbar_small_holo_light</item>
+    </style>
+
+    <style name="RatingBarrockiesrelief" parent="android:Widget.Holo.Light.RatingBar">
+        <item name="android:progressDrawable">@drawable/rockiesrelief_ratingbar_full_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/rockiesrelief_ratingbar_full_holo_light</item>
+    </style>
+
+    <style name="SeekBarrockiesrelief" parent="android:Widget.Holo.Light.SeekBar">
+        <item name="android:progressDrawable">@drawable/rockiesrelief_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/rockiesrelief_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:thumb">@drawable/rockiesrelief_scrubber_control_selector_holo_light</item>
+    </style>
+
+    <style name="Spinnerrockiesrelief" parent="android:Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/rockiesrelief_spinner_background_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/rockiesrelief_list_selector_holo_light</item>
+    </style>
+
+    <style name="TabTextrockiesrelief">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <!-- v14 <item name="android:textAllCaps">true</item> -->
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:maxWidth">180dip</item>
+    </style>
+
+    <style name="Tabrockiesrelief">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingLeft">16dip</item>
+        <item name="android:paddingRight">16dip</item>
+        <item name="android:background">@drawable/rockiesrelief_tab_indicator_holo</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minWidth">80dip</item>
     </style>
     <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
     <eat-comment />
@@ -1152,9 +1250,18 @@
     <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/values/styles.xml -->
     <eat-comment />
 
+    <style name="Theme.Rockiesrelief.Listview" parent="@android:style/Widget.ListView">
+        <item name="android:listSelector">@drawable/rockiesrelief_list_selector_holo_light</item>
+        <item name="android:drawSelectorOnTop">true</item>
+    </style>
+
     <style name="Theme.Rockiesrelief.Widget" parent="@android:style/Theme.Holo">
         <item name="android:popupMenuStyle">@style/PopupMenu.Rockiesrelief</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Rockiesrelief</item>
+    </style>
+
+    <style name="Togglerockiesrelief" parent="android:Widget.Holo.Light.Button.Toggle">
+        <item name="android:background">@drawable/rockiesrelief_btn_toggle_holo_light</item>
     </style>
     <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
     <eat-comment />

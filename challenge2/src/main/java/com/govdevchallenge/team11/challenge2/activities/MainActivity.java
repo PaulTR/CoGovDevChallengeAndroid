@@ -139,13 +139,21 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		NavigationBus.getInstance().register( this );
+		try {
+			NavigationBus.getInstance().register(this);
+		} catch( IllegalArgumentException e ) {
+
+		}
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
-		NavigationBus.getInstance().unregister( this );
+		try {
+			NavigationBus.getInstance().unregister(this);
+		} catch( IllegalArgumentException e ) {
+
+		}
 	}
 
 	@Override

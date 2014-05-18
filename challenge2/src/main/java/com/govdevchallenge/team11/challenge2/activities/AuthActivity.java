@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.plus.Plus;
 import com.govdevchallenge.team11.challenge2.R;
 
@@ -158,11 +160,11 @@ public class AuthActivity extends Activity implements GoogleApiClient.Connection
 	private void onAuthenticated() {
 		if (mGoogleApiClient.isConnected()) {
 			Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
+			Plus.AccountApi.revokeAccessAndDisconnect(mGoogleApiClient);
 			mGoogleApiClient.disconnect();
 		}
 		Intent intent = new Intent( getApplicationContext(), MainActivity.class );
 		startActivity( intent );
 		finish();
 	}
-
 }

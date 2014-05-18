@@ -14,6 +14,7 @@ import com.govdevchallenge.team11.challenge2.R;
  * Created by PaulTR on 5/17/14.
  */
 public class AddDonorDialog extends DialogFragment {
+	
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		LayoutInflater inflater = LayoutInflater.from( getActivity() );

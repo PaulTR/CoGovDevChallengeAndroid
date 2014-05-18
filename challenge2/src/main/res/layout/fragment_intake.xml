@@ -33,14 +33,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/add_buttons_container"
         android:gravity="center"
-        android:text="Donor First and Last Name"/>
+        android:text="Anonymous"/>
 
     <ListView
         android:id="@+id/list"
+        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/donor_name"
-        android:layout_above="@+id/submit" />
+        android:layout_above="@+id/submit"
+        android:divider="@null"
+        android:dividerHeight="8dp"
+        android:drawSelectorOnTop="true" />
 
     <Button
         android:id="@+id/submit"
