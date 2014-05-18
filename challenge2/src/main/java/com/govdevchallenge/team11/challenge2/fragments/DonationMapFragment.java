@@ -207,7 +207,7 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 		lat = mLocationClient.getLastLocation().getLatitude();
 		zoom = 9;
 		bearing = 0;
-		tilt = 30;
+		tilt = 0;
 
 		CameraPosition cameraPosition = new CameraPosition.Builder()
 				.target( new LatLng( lat, lng) )
