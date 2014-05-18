@@ -23,8 +23,6 @@ import com.google.android.gms.common.ConnectionResult;
 public class AuthActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
 
 	private static final int RC_SIGN_IN = 0;
-	// Logcat tag
-	private static final String TAG = "MainActivity";
 
 	// Profile pic image size in pixels
 	private static final int PROFILE_PIC_SIZE = 400;
@@ -43,7 +41,6 @@ public class AuthActivity extends Activity implements GoogleApiClient.Connection
 	private ConnectionResult mConnectionResult;
 
 	private SignInButton mSigninButton;
-	private Button btnSignOut, btnRevokeAccess;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +50,6 @@ public class AuthActivity extends Activity implements GoogleApiClient.Connection
 		mSigninButton = (SignInButton) findViewById( R.id.sign_in_button );
 		mSigninButton.setOnClickListener(this);
 
-		// Initializing google plus api client
 		mGoogleApiClient = new GoogleApiClient.Builder(this)
 				.addConnectionCallbacks(this)
 				.addOnConnectionFailedListener(this).addApi(Plus.API, null)
@@ -79,7 +75,6 @@ public class AuthActivity extends Activity implements GoogleApiClient.Connection
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.sign_in_button:
-				// Signin button clicked
 				signInWithGplus();
 		}
 	}

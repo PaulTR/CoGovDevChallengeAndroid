@@ -27,11 +27,19 @@
         />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/donor_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_buttons_container"
+        android:gravity="center"
+        android:text="Donor First and Last Name"/>
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_buttons_container"
+        android:layout_below="@+id/donor_name"
         android:layout_above="@+id/submit" />
 
     <Button
