@@ -161,6 +161,10 @@ public class AuthActivity extends Activity implements GoogleApiClient.Connection
 	}
 
 	private void onAuthenticated() {
+		if (mGoogleApiClient.isConnected()) {
+			Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
+			mGoogleApiClient.disconnect();
+		}
 		Intent intent = new Intent( getApplicationContext(), MainActivity.class );
 		startActivity( intent );
 		finish();

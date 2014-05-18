@@ -8,8 +8,11 @@
     <string name="navigation_pickup">Delivery Pickups</string>
     <string name="navigation_donation_map">Donation Map</string>
     <string name="navigation_auth">Authentication</string>
-    <string name="navigation_drawer_open">@string/app_name</string>
-    <string name="navigation_drawer_closed">Select Option</string>
+    <string name="navigation_drawer_open">Select Option</string>
+    <string name="navigation_drawer_closed">@string/app_name</string>
     <string name="public_api_android_key">AIzaSyAvri3kVCRVeavjBsnzW6PFxWdZAtkqKiI</string>
+    <string name="add_donator">Add Donor Info</string>
+    <string name="add_item">Add Donated Item</string>
+    <string name="submit">Submit</string>
 
 </resources>

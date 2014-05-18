@@ -69,10 +69,12 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 
 	private void initSpinner() {
 		List<String> items = new ArrayList<String>();
-		items.add("Food");
-		items.add("Water");
-		items.add("Cleaning Supplies");
-		items.add("Blankets");
+		items.add( "Blankets" );
+		items.add( "Canned Food" );
+		items.add( "Clothes" );
+		items.add( "Shampoo" );
+		items.add( "Soap" );
+		items.add( "Water" );
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
 		mCategorySpinner.setAdapter(adapter);

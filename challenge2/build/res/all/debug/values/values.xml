@@ -628,6 +628,8 @@
     <eat-comment />
 
     <string name="action_settings">Settings</string>
+    <string name="add_donator">Add Donor Info</string>
+    <string name="add_item">Add Donated Item</string>
     <string name="app_name">Rockies Relief</string>
     <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/build/exploded-aar/com.google.android.gms/play-services/4.3.23/res/values/strings.xml -->
     <eat-comment />
@@ -664,11 +666,12 @@
 
     <string name="navigation_auth">Authentication</string>
     <string name="navigation_donation_map">Donation Map</string>
-    <string name="navigation_drawer_closed">Select Option</string>
-    <string name="navigation_drawer_open">@string/app_name</string>
+    <string name="navigation_drawer_closed">@string/app_name</string>
+    <string name="navigation_drawer_open">Select Option</string>
     <string name="navigation_intake">Intake Form</string>
     <string name="navigation_pickup">Delivery Pickups</string>
     <string name="public_api_android_key">AIzaSyAvri3kVCRVeavjBsnzW6PFxWdZAtkqKiI</string>
+    <string name="submit">Submit</string>
     <!-- From: file:/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/values/styles.xml -->
     <eat-comment />
 

@@ -45,6 +45,8 @@ public class MainActivity extends FragmentActivity {
 				.beginTransaction()
 				.replace(R.id.content_container, DonationMapFragment.getInstance())
 				.commit();
+
+		mCurFragmentName = getString( R.string.navigation_donation_map );
 	}
 
 	private void initActionBar() {
