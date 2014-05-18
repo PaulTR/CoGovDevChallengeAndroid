@@ -32,6 +32,7 @@ import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by PaulTR on 5/17/14.
@@ -51,6 +52,7 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		mLocationClient = new LocationClient( getActivity(), this, this );
 	}
 
@@ -97,54 +99,29 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 
 		mMarkerLocations.clear();
 		mGoogleMap.clear();
-		Log.e("DonationMapFragment", "onDonationMapSpinnerItemEvent");
+		Random random = new Random();
+		addMarker( Integer.toString(Math.abs(random.nextInt(9999))), 40.10, -105.25, "Boulder Shelter", "Address" );
+		addMarker( Integer.toString( Math.abs( random.nextInt( 9999 ) ) ), 40, -105.10, "Longmont Shelter", "Address" );
+		addMarker( Integer.toString( Math.abs( random.nextInt( 9999 ) ) ), 39.75, -104.87, "Denver Shelter", "Address" );
+	}
 
-
+	private void addMarker(String num, double lat, double lng, String title, String address) {
 		Bitmap.Config conf = Bitmap.Config.ARGB_8888;
-		Bitmap bmp = Bitmap.createBitmap(100, 50, conf);
+		Bitmap bmp = Bitmap.createBitmap(150, 50, conf);
 		Canvas canvas = new Canvas(bmp);
 		Paint paint = new Paint();
 		paint.setColor( getResources().getColor( android.R.color.holo_purple ) );
 		paint.setTextSize( 50 );
 		paint.setFakeBoldText( true );
-		canvas.drawText("423", 0, 50, paint );
+		canvas.drawText(num, 0, 50, paint );
 		Marker marker = mGoogleMap.addMarker(new MarkerOptions()
-				.position( new LatLng( 40.10, -105.25 ) )
-				.title("Boulder Shelter")
-				.icon(BitmapDescriptorFactory.fromBitmap( bmp ) )
-				.snippet("Address goes here") );
-		mMarkerLocations.add( marker );
-
-		conf = Bitmap.Config.ARGB_8888;
-		bmp = Bitmap.createBitmap(100, 50, conf);
-		canvas = new Canvas(bmp);
-		paint = new Paint();
-		paint.setColor( getResources().getColor( android.R.color.holo_purple ) );
-		paint.setTextSize( 50 );
-		paint.setFakeBoldText( true );
-		canvas.drawText("13", 0, 50, paint );
-		marker = mGoogleMap.addMarker(new MarkerOptions()
-				.position(new LatLng(40, -105.10))
-				.icon(BitmapDescriptorFactory.fromBitmap( bmp ) )
-				.title( "Longmont Shelter" )
-				.snippet( "Address goes here" ) );
-		mMarkerLocations.add( marker );
-
-		conf = Bitmap.Config.ARGB_8888;
-		bmp = Bitmap.createBitmap(100, 50, conf);
-		canvas = new Canvas(bmp);
-		paint = new Paint();
-		paint.setColor( getResources().getColor( android.R.color.holo_purple ) );
-		paint.setTextSize( 50 );
-		paint.setFakeBoldText( true );
-		canvas.drawText("763", 0, 50, paint );
-		marker = mGoogleMap.addMarker( new MarkerOptions()
-				.position( new LatLng( 39.75, -104.87 ) )
-				.icon(BitmapDescriptorFactory.fromBitmap( bmp ) )
-				.title("Denver Shelter")
-				.snippet( "Address goes here" ) );
+				.position( new LatLng( lat, lng ) )
+				.title( title )
+				.icon(BitmapDescriptorFactory.fromBitmap(bmp))
+				.snippet(address) );
 		mMarkerLocations.add( marker );
 	}
+
 
 	@Override
 	public void onStart() {
@@ -169,19 +146,28 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 	public void onPause() {
 		super.onPause();
 		NavigationBus.getInstance().unregister( this );
-		if( getFragmentManager() == null )
-			return;
-		Fragment fragment = ( getFragmentManager().findFragmentById( R.id.map ) );
-		if( fragment == null )
-			return;
-		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.remove(fragment);
-		ft.commit();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
 	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
+		try {
+			if (getFragmentManager() == null)
+				return;
+			Fragment fragment = (getFragmentManager().findFragmentById(R.id.map));
+			if (fragment == null)
+				return;
+			FragmentTransaction ft = getFragmentManager().beginTransaction();
+			ft.remove(fragment);
+			ft.commit();
+		} catch( IllegalStateException e ) {
+
+		}
 	}
 
 	@Override
@@ -192,15 +178,14 @@ public class DonationMapFragment extends Fragment implements GooglePlayServicesC
 
 	private void initMap() {
 		if( mGoogleMap == null ) {
-			mGoogleMap = mMapFragment.getMap();
+			mGoogleMap = ( (MapFragment) getFragmentManager().findFragmentById( R.id.map ) ).getMap();
 		}
 
-		mGoogleMap.setTrafficEnabled( false );
-		mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL );
+		mGoogleMap.setTrafficEnabled(false);
+		mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 		mGoogleMap.setMyLocationEnabled(true);
-		mGoogleMap.setIndoorEnabled( false );
-		mGoogleMap.setMyLocationEnabled( true );
-
+		mGoogleMap.setIndoorEnabled(false);
+		mGoogleMap.setMyLocationEnabled(true);
 		mGoogleMap.setOnMarkerClickListener( new GoogleMap.OnMarkerClickListener() {
 			@Override
 			public boolean onMarkerClick(Marker marker) {

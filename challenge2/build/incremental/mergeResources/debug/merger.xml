@@ -4570,16 +4570,16 @@
                     msgid="26645092511305524" >"Dapatkan perkhidmatan Google Play"
                 </string>
                 <string
+                    name="auth_client_needs_installation_title"
+                    msgid="7999585836145154206" >"Perkhidmatan Google Play perlu dipasang untuk mengguankan aplikasi."
+                </string>
+                <string
                     name="common_google_play_services_unsupported_date_text"
                     msgid="4725396522367789365" >"Tarikh pada peranti kelihatan tidak betul. Sila semak tarikh pada peranti."
                 </string>
                 <string
                     name="common_signin_button_text"
                     msgid="9071884888741449141" >"Log masuk"
-                </string>
-                <string
-                    name="auth_client_needs_installation_title"
-                    msgid="7999585836145154206" >"Perkhidmatan Google Play perlu dipasang untuk mengguankan aplikasi."
                 </string>
             </file>
             <file
@@ -15287,8 +15287,18 @@ false
                 qualifiers="hdpi"
                 type="drawable" />
             <file
+                name="ic_navigation_drawer"
+                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-hdpi/ic_navigation_drawer.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_navigation_drawer"
+                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-mdpi/ic_navigation_drawer.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
@@ -15297,8 +15307,18 @@ false
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
+                name="ic_navigation_drawer"
+                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-xhdpi/ic_navigation_drawer.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_navigation_drawer"
+                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-xxhdpi/ic_navigation_drawer.png"
                 qualifiers="xxhdpi"
                 type="drawable" />
             <file
@@ -15309,11 +15329,6 @@ false
             <file
                 name="activity_main"
                 path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/layout/activity_main.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_auth"
-                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/layout/fragment_auth.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -15399,25 +15414,15 @@ false
                 </dimen>
             </file>
             <file
-                name="ic_navigation_drawer"
-                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-hdpi/ic_navigation_drawer.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_navigation_drawer"
-                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-xhdpi/ic_navigation_drawer.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_navigation_drawer"
-                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-mdpi/ic_navigation_drawer.png"
+                name="flag"
+                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-mdpi/flag.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
-                name="ic_navigation_drawer"
-                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/drawable-xxhdpi/ic_navigation_drawer.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
+                name="activity_auth"
+                path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/res/layout/activity_auth.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/build/res/rs/debug" />
         <source path="/Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/build/res/generated/debug" />

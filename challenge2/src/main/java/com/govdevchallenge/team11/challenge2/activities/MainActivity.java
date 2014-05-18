@@ -1,6 +1,5 @@
 package com.govdevchallenge.team11.challenge2.activities;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.view.View;
 
 import com.govdevchallenge.team11.challenge2.R;
 import com.govdevchallenge.team11.challenge2.events.DrawerNavigationEvent;
-import com.govdevchallenge.team11.challenge2.fragments.AuthFragment;
 import com.govdevchallenge.team11.challenge2.fragments.DeliveryPickupFragment;
 import com.govdevchallenge.team11.challenge2.fragments.DonationMapFragment;
 import com.govdevchallenge.team11.challenge2.fragments.IntakeFormFragment;
@@ -38,8 +36,16 @@ public class MainActivity extends FragmentActivity {
 		mDrawerLayout = (DrawerLayout) findViewById( R.id.drawer_layout );
 		initActionBar();
 		initNavigationDrawer();
-		initAuthenticationFragment();
+
+		displayInitialFragment();
     }
+
+	private void displayInitialFragment() {
+		getFragmentManager()
+				.beginTransaction()
+				.replace(R.id.content_container, DonationMapFragment.getInstance())
+				.commit();
+	}
 
 	private void initActionBar() {
 		if( getActionBar() == null )
@@ -47,10 +53,6 @@ public class MainActivity extends FragmentActivity {
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
-	}
-
-	private void onAuthentication() {
-		//initNavigationDrawer();
 	}
 
 	private void initNavigationDrawer() {
@@ -97,15 +99,6 @@ public class MainActivity extends FragmentActivity {
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
 		mDrawerToggle.onConfigurationChanged(newConfig);
-	}
-
-	private void initAuthenticationFragment() {
-		getFragmentManager()
-				.beginTransaction()
-				.replace( R.id.content_container, AuthFragment.getInstance() )
-				.commit();
-
-		mCurFragmentName = getString( R.string.navigation_auth );
 	}
 
 	@Subscribe
