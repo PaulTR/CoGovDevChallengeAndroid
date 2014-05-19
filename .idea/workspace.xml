@@ -89,8 +89,8 @@
       <file leaf-file-name="IntakeFormFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/challenge2/src/main/java/com/govdevchallenge/team11/challenge2/fragments/IntakeFormFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22693267" vertical-offset="1949" max-vertical-offset="3405">
-              <caret line="136" column="56" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.2892768" vertical-offset="1999" max-vertical-offset="3405">
+              <caret line="141" column="79" selection-start-line="141" selection-start-column="79" selection-end-line="141" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2006#2012#0" expanded="true" />
@@ -1237,6 +1237,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/PaulTR/Documents/SLWork/Team11GovDevChallenge2/challenge2/src/main/java/com/govdevchallenge/team11/challenge2/fragments/NavigationDrawerFragment.java" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1427,7 +1428,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1988,8 +1989,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/challenge2/src/main/java/com/govdevchallenge/team11/challenge2/fragments/IntakeFormFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22693267" vertical-offset="1949" max-vertical-offset="3405">
-          <caret line="136" column="56" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.2892768" vertical-offset="1999" max-vertical-offset="3405">
+          <caret line="141" column="79" selection-start-line="141" selection-start-column="79" selection-end-line="141" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2006#2012#0" expanded="true" />
